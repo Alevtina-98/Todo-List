@@ -14,9 +14,12 @@ function App() {
   });
 
   const [taskTitle, setTaskTitle] = useState("");
+  const [incompeteTasks, setIncompeteTasks] = useState(0);
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
+    const count = tasks.filter((task) => !task.status).length;
+    setIncompeteTasks(count);
   }, [tasks]);
 
   const addTask = (e) => {
@@ -39,6 +42,7 @@ function App() {
     <div className="container">
       <h1>Note your tasks</h1>
       <DateComponent />
+      <p>Uncompleted tasks: {incompeteTasks}</p>
       <div className="input-field">
         <input
           type="text"

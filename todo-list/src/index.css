@@ -44,4 +44,15 @@ span {
 .data {
   margin: 5px;
   font-size: 12px;
+  display: block;
+}
+
+.edit {
+  margin: 15px;
+  background-color: rgb(183, 183, 38);
+  border: none;
+  font-size: 18px;
+  color: rgb(59, 78, 90);
+  border-radius: 10px;
+  cursor: pointer;
 }
